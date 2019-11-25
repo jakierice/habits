@@ -3,3 +3,9 @@ type Todo @model {
   name: String!
   description: String
 }
+
+type Habit @model {
+  id: ID!
+  name: String!
+  description: String
+}

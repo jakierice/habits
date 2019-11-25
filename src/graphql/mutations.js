@@ -25,3 +25,27 @@ export const deleteTodo = `mutation DeleteTodo($input: DeleteTodoInput!) {
   }
 }
 `;
+export const createHabit = `mutation CreateHabit($input: CreateHabitInput!) {
+  createHabit(input: $input) {
+    id
+    name
+    description
+  }
+}
+`;
+export const updateHabit = `mutation UpdateHabit($input: UpdateHabitInput!) {
+  updateHabit(input: $input) {
+    id
+    name
+    description
+  }
+}
+`;
+export const deleteHabit = `mutation DeleteHabit($input: DeleteHabitInput!) {
+  deleteHabit(input: $input) {
+    id
+    name
+    description
+  }
+}
+`;

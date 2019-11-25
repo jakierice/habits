@@ -4,6 +4,12 @@ type Todo {
   description: String
 }
 
+type Habit {
+  id: ID!
+  name: String!
+  description: String
+}
+
 enum ModelSortDirection {
   ASC
   DESC
@@ -81,6 +87,8 @@ input ModelTodoFilterInput {
 type Query {
   getTodo(id: ID!): Todo
   listTodos(filter: ModelTodoFilterInput, limit: Int, nextToken: String): ModelTodoConnection
+  getHabit(id: ID!): Habit
+  listHabits(filter: ModelHabitFilterInput, limit: Int, nextToken: String): ModelHabitConnection
 }
 
 input CreateTodoInput {
@@ -103,10 +111,46 @@ type Mutation {
   createTodo(input: CreateTodoInput!): Todo
   updateTodo(input: UpdateTodoInput!): Todo
   deleteTodo(input: DeleteTodoInput!): Todo
+  createHabit(input: CreateHabitInput!): Habit
+  updateHabit(input: UpdateHabitInput!): Habit
+  deleteHabit(input: DeleteHabitInput!): Habit
 }
 
 type Subscription {
   onCreateTodo: Todo @aws_subscribe(mutations: ["createTodo"])
   onUpdateTodo: Todo @aws_subscribe(mutations: ["updateTodo"])
   onDeleteTodo: Todo @aws_subscribe(mutations: ["deleteTodo"])
+  onCreateHabit: Habit @aws_subscribe(mutations: ["createHabit"])
+  onUpdateHabit: Habit @aws_subscribe(mutations: ["updateHabit"])
+  onDeleteHabit: Habit @aws_subscribe(mutations: ["deleteHabit"])
+}
+
+type ModelHabitConnection {
+  items: [Habit]
+  nextToken: String
+}
+
+input ModelHabitFilterInput {
+  id: ModelIDFilterInput
+  name: ModelStringFilterInput
+  description: ModelStringFilterInput
+  and: [ModelHabitFilterInput]
+  or: [ModelHabitFilterInput]
+  not: ModelHabitFilterInput
+}
+
+input CreateHabitInput {
+  id: ID
+  name: String!
+  description: String
+}
+
+input UpdateHabitInput {
+  id: ID!
+  name: String
+  description: String
+}
+
+input DeleteHabitInput {
+  id: ID
 }

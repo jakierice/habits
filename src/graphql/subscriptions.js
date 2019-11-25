@@ -25,3 +25,27 @@ export const onDeleteTodo = `subscription OnDeleteTodo {
   }
 }
 `;
+export const onCreateHabit = `subscription OnCreateHabit {
+  onCreateHabit {
+    id
+    name
+    description
+  }
+}
+`;
+export const onUpdateHabit = `subscription OnUpdateHabit {
+  onUpdateHabit {
+    id
+    name
+    description
+  }
+}
+`;
+export const onDeleteHabit = `subscription OnDeleteHabit {
+  onDeleteHabit {
+    id
+    name
+    description
+  }
+}
+`;

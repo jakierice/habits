@@ -1,7 +1,7 @@
 {
     "AppSyncApiName": "habits",
-    "schemaGraphql": "s3://habits-20191122190801-deployment/amplify-appsync-files/schema.graphql.1574471421247",
+    "schemaGraphql": "s3://habits-20191122190801-deployment/amplify-appsync-files/schema.graphql.1574549119432",
     "ResolverBucket": "habits-20191122190801-deployment",
     "ResolverRootKey": "amplify-appsync-files",
-    "DeploymentTimestamp": "1574471421247"
+    "DeploymentTimestamp": "1574549119432"
 }
