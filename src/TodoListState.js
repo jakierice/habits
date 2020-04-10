@@ -1,8 +1,8 @@
 export class TodoListState {
   constructor() {
-    if (this.constructor.name === 'TodoState') {
+    if (this.constructor.name === 'TodoListState') {
       throw new Error(
-        `TodoState is an abstract class. You can't have an instance of it.`,
+        `TodoListState is an abstract class. You can't have an instance of it.`,
       );
     }
   }
